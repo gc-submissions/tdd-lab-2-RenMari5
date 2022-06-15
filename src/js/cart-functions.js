@@ -31,7 +31,12 @@ function addItem(itemsArray, name, price) {
   itemsArray.push(newItem);
 }
 
-function removeItem(itemsArray, index) {}
+function removeItem(itemsArray, index) {
+  let array = itemsArray;
+  array.slice(index);
+}
+
+function formatCurrency(amount) {}
 
 module.exports = {
   calculateChange,
@@ -39,4 +44,5 @@ module.exports = {
   calculateTotal,
   addItem,
   removeItem,
+  formatCurrency,
 };

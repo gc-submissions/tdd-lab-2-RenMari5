@@ -4,6 +4,7 @@ const {
   calculateTotal,
   addItem,
   removeItem,
+  formatCurrency,
 } = require("../src/js/cart-functions.js");
 
 describe("calculateChange", () => {
@@ -154,5 +155,79 @@ describe("addItem", () => {
 });
 
 describe("removeItem", () => {
-  // Arrange
+  test("Removes one item from the array at a given index", () => {
+    // Arrange
+    let itemsArray = [
+      { name: "Jelly", price: 3.5 },
+      { name: "Sugar", price: 2 },
+      { name: "Tomatoes", price: 5 },
+    ];
+    index = 1;
+
+    // Act
+    removeItem(itemsArray, index);
+
+    // Assert
+    expect(itemsArray).toContainEqual({ name: "Jelly", price: 3.5 });
+    expect(itemsArray).toContainEqual({ name: "Tomatoes", price: 5 });
+  });
+  test("Removes the first item from the array of three items", () => {
+    // Arrange
+    let itemsArray = [
+      { name: "Jelly", price: 3.5 },
+      { name: "Sugar", price: 2 },
+      { name: "Tomatoes", price: 5 },
+    ];
+    let index = 0;
+
+    // Act
+    removeItem(itemsArray, index);
+
+    // Assert
+    expect(itemsArray).toContainEqual({ name: "Sugar", price: 2 });
+    expect(itemsArray).toContainEqual({ name: "Tomatoes", price: 5 });
+  });
+  test("Removes the last item from the array of three items", () => {
+    // Arrange
+    let itemsArray = [
+      { name: "Jelly", price: 3.5 },
+      { name: "Sugar", price: 2 },
+      { name: "Tomatoes", price: 5 },
+    ];
+    let index = 2;
+
+    // Act
+    removeItem(itemsArray, index);
+
+    // Assert
+    expect(itemsArray).toContainEqual({ name: "Jelly", price: 3.5 });
+    expect(itemsArray).toContainEqual({ name: "Sugar", price: 2 });
+  });
+  test("Removes the middle item from an array of three items", () => {
+    // Arrange
+    let itemsArray = [
+      { name: "Jelly", price: 3.5 },
+      { name: "Sugar", price: 2 },
+      { name: "Tomatoes", price: 5 },
+    ];
+    index = 1;
+
+    // Act
+    removeItem(itemsArray, index);
+
+    // Assert
+    expect(itemsArray).toContainEqual({ name: "Jelly", price: 3.5 });
+    expect(itemsArray).toContainEqual({ name: "Tomatoes", price: 5 });
+  });
+  test("Removes the only item from an array of one item", () => {
+    // Arrange
+    let itemsArray = [{ name: "Tomatoes", price: 5 }];
+    index = 0;
+
+    // Act
+    removeItem(itemsArray, index);
+
+    // Assert
+    expect(itemsArray).toHaveLength(0);
+  });
 });
