@@ -4,7 +4,6 @@ const {
   calculateTotal,
   addItem,
   removeItem,
-  formatCurrency,
 } = require("../src/js/cart-functions.js");
 
 describe("calculateChange", () => {

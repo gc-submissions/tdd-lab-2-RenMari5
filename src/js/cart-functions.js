@@ -36,13 +36,10 @@ function removeItem(itemsArray, index) {
   array.slice(index);
 }
 
-function formatCurrency(amount) {}
-
 module.exports = {
   calculateChange,
   isSufficientPayment,
   calculateTotal,
   addItem,
   removeItem,
-  formatCurrency,
 };
