@@ -14,5 +14,14 @@ describe("formatCurrency", () => {
 });
 
 describe("getCoins", () => {
-  test("How many nickles, dimes, pennies, and quarters are required given the amount", () => {});
+  test("How many nickles, dimes, pennies, and quarters are required given the amount", () => {
+    // Arrange
+    let cents = 32;
+
+    // Act
+    getCoins(32);
+
+    // Assert
+    expect(getCoins).toBe({ quarters: 1, dimes: 0, nickels: 1, pennies: 2 });
+  });
 });
