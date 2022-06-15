@@ -33,7 +33,7 @@ function addItem(itemsArray, name, price) {
 
 function removeItem(itemsArray, index) {
   let array = itemsArray;
-  array.slice(index);
+  array.slice(index, 1);
 }
 
 module.exports = {

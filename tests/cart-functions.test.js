@@ -185,6 +185,7 @@ describe("removeItem", () => {
     // Assert
     expect(itemsArray).toContainEqual({ name: "Sugar", price: 2 });
     expect(itemsArray).toContainEqual({ name: "Tomatoes", price: 5 });
+    // not.toContainEqual
   });
   test("Removes the last item from the array of three items", () => {
     // Arrange
@@ -227,6 +228,6 @@ describe("removeItem", () => {
     removeItem(itemsArray, index);
 
     // Assert
-    expect(itemsArray).toContainEqual();
+    expect(itemsArray).not.toContainEqual({ name: "Tomatoes", price: 5 });
   });
 });
