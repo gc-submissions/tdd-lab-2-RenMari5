@@ -9,20 +9,10 @@ describe("formatCurrency", () => {
     formatCurrency(amount);
 
     // Assert
-    expect(amount).toBe("$0.00");
-  });
-  test("Format number by rounding and displaying with two decimals", () => {
-    // Arrange
-    let amount = 1;
-
-    // Act
-    formatCurrency(amount);
-
-    // Assert
-    expect(amount).toBeCloseTo("$1.00");
+    expect(amount).toMatch("$0.00");
   });
 });
 
 describe("getCoins", () => {
-  test.todo("add getCoins tests here");
+  test("How many nickles, dimes, pennies, and quarters are required given the amount", () => {});
 });
