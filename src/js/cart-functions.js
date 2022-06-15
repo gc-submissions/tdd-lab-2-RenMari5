@@ -24,4 +24,19 @@ function calculateTotal(itemsArray) {
   return sum;
 }
 
-module.exports = { calculateChange, isSufficientPayment, calculateTotal };
+function addItem(itemsArray, name, price) {
+  let newItem = new Object();
+  newItem.name = name;
+  newItem.price = price;
+  itemsArray.push(newItem);
+}
+
+function removeItem(itemsArray, index) {}
+
+module.exports = {
+  calculateChange,
+  isSufficientPayment,
+  calculateTotal,
+  addItem,
+  removeItem,
+};

@@ -2,6 +2,8 @@ const {
   calculateChange,
   isSufficientPayment,
   calculateTotal,
+  addItem,
+  removeItem,
 } = require("../src/js/cart-functions.js");
 
 describe("calculateChange", () => {
@@ -107,9 +109,50 @@ describe("calculateTotal", () => {
 });
 
 describe("addItem", () => {
-  test.todo("add addItem tests here");
+  test("Adds newItem to the array", () => {
+    // Arrange
+    let itemsArray = [];
+    let name = "Beans";
+    let price = 3;
+
+    // Act
+    addItem(itemsArray, name, price);
+
+    // Assert
+    expect(itemsArray).toContainEqual({ name: "Beans", price: 3 });
+  });
+  test("Adds newItem to the array with one item", () => {
+    // Arrange
+    let itemsArray = [{ name: "Beans", price: 3 }];
+    let name = "Sugar";
+    let price = 2;
+
+    // Act
+    addItem(itemsArray, name, price);
+
+    // Assert
+    expect(itemsArray).toHaveLength(2);
+    expect(itemsArray).toContainEqual({ name: "Beans", price: 3 });
+    expect(itemsArray).toContainEqual({ name: "Sugar", price: 2 });
+  });
+  test("Adds newItem to the array with one item", () => {
+    // Arrange
+    let itemsArray = [
+      { name: "Beans", price: 3 },
+      { name: "Sugar", price: 2 },
+      { name: "Tomatoes", price: 5 },
+    ];
+    let name = "Coffee";
+    let price = 4;
+
+    // Act
+    addItem(itemsArray, name, price);
+
+    // Assert
+    expect(itemsArray).toHaveLength(4);
+  });
 });
 
 describe("removeItem", () => {
-  test.todo("add removeItem tests here");
+  // Arrange
 });
