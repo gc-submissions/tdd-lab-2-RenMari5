@@ -218,15 +218,15 @@ describe("removeItem", () => {
     expect(itemsArray).toContainEqual({ name: "Jelly", price: 3.5 });
     expect(itemsArray).toContainEqual({ name: "Tomatoes", price: 5 });
   });
-  // test("Removes the only item from an array of one item", () => {
-  //   // Arrange
-  //   let itemsArray = [{ name: "Tomatoes", price: 5 }];
-  //   index = 0;
+  test("Removes the only item from an array of one item", () => {
+    // Arrange
+    let itemsArray = [{ name: "Tomatoes", price: 5 }];
+    index = 0;
 
-  //   // Act
-  //   removeItem(itemsArray, index);
+    // Act
+    removeItem(itemsArray, index);
 
-  //   // Assert
-  //   expect(itemsArray).toHaveLength(0);
-  // });
+    // Assert
+    expect(itemsArray).toContainEqual();
+  });
 });
